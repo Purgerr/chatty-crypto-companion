@@ -29,7 +29,7 @@ export const PersonaCard = ({
       <Button
         onClick={onClick}
         variant={isSelected ? "default" : "outline"}
-        className="w-full"
+        className="w-full font-medium"
       >
         {isSelected ? "Selected" : "Choose Persona"}
       </Button>
