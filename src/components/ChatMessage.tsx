@@ -24,7 +24,10 @@ export const ChatMessage = ({ message, isAi }: ChatMessageProps) => {
   };
 
   const handleAudio = () => {
-    // Audio functionality placeholder
+    toast({
+      description: "Audio feature coming soon!",
+      duration: 2000,
+    });
     console.log('Audio button clicked for message:', message);
   };
 
