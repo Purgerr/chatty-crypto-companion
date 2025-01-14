@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { PersonaSelection } from "@/components/PersonaSelection";
 import { ChatInterface } from "@/components/ChatInterface";
-import { ComingSoonSection } from "@/components/ComingSoonSection";
 import { Footer } from "@/components/Footer";
 
 interface Message {
@@ -100,7 +99,6 @@ const Index = () => {
               selectedPersona={selectedPersona} 
               onSelectPersona={setSelectedPersona} 
             />
-            <ComingSoonSection />
             <Footer />
           </>
         ) : (
