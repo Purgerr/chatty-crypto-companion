@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ChatInput } from "@/components/ChatInput";
 import { ChatMessage } from "@/components/ChatMessage";
 import { PersonaCard } from "@/components/PersonaCard";
-import { Brain, Coins, Code, Wallet, Home, Twitter, MessageSquare } from "lucide-react";
+import { Brain, Coins, Code, Wallet, Home, Twitter, MessageSquare, TikTok, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useNavigate } from "react-router-dom";
@@ -165,17 +165,17 @@ const Index = () => {
           </h3>
           <div className="grid grid-cols-3 gap-4">
             <Button variant="outline" className="flex items-center gap-2 border-[#2A303C] text-[#9b87f5] hover:text-[#D946EF]" disabled>
-              <MessageSquare className="h-4 w-4" />
+              <TikTok className="h-4 w-4" />
               TikTok
               <span className="text-xs">(Coming Soon)</span>
             </Button>
             <Button variant="outline" className="flex items-center gap-2 border-[#2A303C] text-[#9b87f5] hover:text-[#D946EF]" disabled>
-              <MessageSquare className="h-4 w-4" />
+              <MessageCircle className="h-4 w-4" />
               WhatsApp
               <span className="text-xs">(Coming Soon)</span>
             </Button>
             <Button variant="outline" className="flex items-center gap-2 border-[#2A303C] text-[#9b87f5] hover:text-[#D946EF]" disabled>
-              <MessageSquare className="h-4 w-4" />
+              <Twitter className="h-4 w-4" />
               Twitter
               <span className="text-xs">(Coming Soon)</span>
             </Button>
