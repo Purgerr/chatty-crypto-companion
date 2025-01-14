@@ -17,21 +17,18 @@ const personas = [
     id: 1,
     title: "Crypto Analyst",
     description: "Expert in cryptocurrency markets and trading strategies",
-    image: "https://api.dicebear.com/7.x/adventurer-neutral/svg?seed=analyst",
     fallback: "CA"
   },
   {
     id: 2,
     title: "NFT Enthusiast",
     description: "Specialized in NFT trends and marketplace insights",
-    image: "https://api.dicebear.com/7.x/adventurer-neutral/svg?seed=creative",
     fallback: "NE"
   },
   {
     id: 3,
     title: "Blockchain Developer",
     description: "Technical expert in Web3 development and smart contracts",
-    image: "https://api.dicebear.com/7.x/adventurer-neutral/svg?seed=developer",
     fallback: "BD"
   },
 ];

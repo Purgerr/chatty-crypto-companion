@@ -1,4 +1,3 @@
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ChatInput } from "@/components/ChatInput";
 import { ChatMessage } from "@/components/ChatMessage";
 
@@ -17,7 +16,6 @@ interface ChatInterfaceProps {
   personas: Array<{
     id: number;
     title: string;
-    image: string;
     fallback: string;
   }>;
 }
@@ -35,10 +33,6 @@ export const ChatInterface = ({
     <div className="flex w-full flex-1 flex-col items-center">
       <div className="mb-4 md:mb-8 flex w-full max-w-3xl items-center justify-between rounded-lg bg-black/80 p-3 md:p-4 border border-[#2A303C]">
         <div className="flex items-center gap-2 md:gap-3">
-          <Avatar className="h-8 w-8 md:h-10 md:w-10 ring-2 ring-[#9b87f5]">
-            <AvatarImage src={currentPersona?.image} alt={currentPersona?.title} />
-            <AvatarFallback>{currentPersona?.fallback}</AvatarFallback>
-          </Avatar>
           <span className="font-medium text-sm md:text-base text-[#9b87f5]">
             {currentPersona?.title}
           </span>

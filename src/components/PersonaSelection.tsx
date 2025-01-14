@@ -1,5 +1,4 @@
 import { Brain, Coins, Code } from "lucide-react";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { PersonaCard } from "@/components/PersonaCard";
 
 const personas = [
@@ -8,7 +7,6 @@ const personas = [
     title: "Crypto Analyst",
     description: "Expert in cryptocurrency markets and trading strategies",
     icon: <Coins className="h-8 w-8" />,
-    image: "https://api.dicebear.com/7.x/adventurer-neutral/svg?seed=analyst",
     fallback: "CA"
   },
   {
@@ -16,7 +14,6 @@ const personas = [
     title: "NFT Enthusiast",
     description: "Specialized in NFT trends and marketplace insights",
     icon: <Brain className="h-8 w-8" />,
-    image: "https://api.dicebear.com/7.x/adventurer-neutral/svg?seed=creative",
     fallback: "NE"
   },
   {
@@ -24,7 +21,6 @@ const personas = [
     title: "Blockchain Developer",
     description: "Technical expert in Web3 development and smart contracts",
     icon: <Code className="h-8 w-8" />,
-    image: "https://api.dicebear.com/7.x/adventurer-neutral/svg?seed=developer",
     fallback: "BD"
   },
 ];
@@ -48,19 +44,14 @@ export const PersonaSelection = ({ selectedPersona, onSelectPersona }: PersonaSe
       </div>
       <div className="grid gap-4 md:gap-6 md:grid-cols-3">
         {personas.map((persona) => (
-          <div key={persona.id} className="flex flex-col items-center">
-            <Avatar className="mb-4 md:mb-6 h-16 w-16 md:h-24 md:w-24 ring-2 ring-[#9b87f5] ring-offset-2 ring-offset-black">
-              <AvatarImage src={persona.image} alt={persona.title} />
-              <AvatarFallback>{persona.fallback}</AvatarFallback>
-            </Avatar>
-            <PersonaCard
-              title={persona.title}
-              description={persona.description}
-              icon={persona.icon}
-              isSelected={selectedPersona === persona.id}
-              onClick={() => onSelectPersona(persona.id)}
-            />
-          </div>
+          <PersonaCard
+            key={persona.id}
+            title={persona.title}
+            description={persona.description}
+            icon={persona.icon}
+            isSelected={selectedPersona === persona.id}
+            onClick={() => onSelectPersona(persona.id)}
+          />
         ))}
       </div>
     </div>
