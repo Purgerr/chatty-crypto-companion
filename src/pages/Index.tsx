@@ -5,6 +5,7 @@ import { PersonaCard } from "@/components/PersonaCard";
 import { Brain, Coins, Code, Wallet, Home, ExternalLink, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { useNavigate } from "react-router-dom";
 
 interface Message {
   id: number;
@@ -41,6 +42,7 @@ const personas = [
 ];
 
 const Index = () => {
+  const navigate = useNavigate();
   const [selectedPersona, setSelectedPersona] = useState<number | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
 
@@ -70,7 +72,12 @@ const Index = () => {
     <div className="flex min-h-screen flex-col items-center bg-gradient-to-b from-background to-accent/20">
       {/* Navigation Header */}
       <header className="w-full px-6 py-4 flex justify-between items-center">
-        <Button variant="ghost" size="icon" className="hover:bg-accent">
+        <Button 
+          variant="ghost" 
+          size="icon" 
+          className="hover:bg-accent"
+          onClick={() => navigate('/')}
+        >
           <Home className="h-5 w-5" />
         </Button>
         <Button className="flex items-center gap-2">
