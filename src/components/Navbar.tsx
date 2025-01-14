@@ -16,7 +16,7 @@ export const Navbar = () => {
         >
           <Home className="h-5 w-5" />
         </Button>
-        <span className="text-xl font-mono text-white">Logik Core AI</span>
+        <span className="text-xl font-mono bg-gradient-to-r from-[#9b87f5] to-[#D946EF] bg-clip-text text-transparent font-bold">Logik Core AI</span>
       </div>
       <Button className="bg-[#9b87f5] hover:bg-[#8B5CF6] text-white">
         Connect Wallet
