@@ -30,8 +30,8 @@ export const ChatInterface = ({
   const currentPersona = personas.find(p => p.id === selectedPersona);
 
   return (
-    <div className="flex flex-col h-screen items-center">
-      <div className="mb-4 flex w-full max-w-3xl items-center justify-between rounded-lg bg-[#1E1B2E] p-3 md:p-4 border border-[#2A303C]">
+    <div className="flex w-full flex-1 flex-col items-center">
+      <div className="mb-4 md:mb-8 flex w-full max-w-3xl items-center justify-between rounded-lg bg-black/80 p-3 md:p-4 border border-[#2A303C]">
         <div className="flex items-center gap-2 md:gap-3">
           <span className="font-medium text-sm md:text-base text-[#9b87f5]">
             {currentPersona?.title}
@@ -44,8 +44,7 @@ export const ChatInterface = ({
           Change Persona
         </button>
       </div>
-      
-      <div className="flex-1 overflow-y-auto space-y-3 md:space-y-4 w-full max-w-3xl px-2 md:px-0">
+      <div className="flex flex-1 flex-col items-center space-y-3 md:space-y-4 w-full max-w-3xl px-2 md:px-0">
         {messages.map((message) => (
           <ChatMessage
             key={message.id}
@@ -55,8 +54,7 @@ export const ChatInterface = ({
           />
         ))}
       </div>
-      
-      <div className="w-full max-w-3xl mt-4 sticky bottom-0">
+      <div className="w-full max-w-3xl mt-4">
         <ChatInput onSendMessage={onSendMessage} />
       </div>
     </div>

@@ -6,7 +6,7 @@ export const Header = () => {
   const navigate = useNavigate();
   
   return (
-    <header className="w-full px-6 py-4 flex justify-between items-center bg-[#1A1F2C] border-b border-[#2A303C]">
+    <header className="w-full px-6 py-4 flex justify-between items-center bg-black/80 border-b border-[#2A303C]">
       <Button 
         variant="ghost" 
         size="icon"
