@@ -92,15 +92,17 @@ const Index = () => {
   return (
     <div className="flex min-h-screen flex-col bg-[#1A1F2C]">
       <Navbar />
-      <main className="flex-1 container mx-auto py-8 px-4">
+      <main className="flex-1 container mx-auto py-8 px-4 flex items-center justify-center">
         {!selectedPersona ? (
-          <div className="flex flex-col min-h-screen">
-            <div className="flex-grow">
-              <PersonaSelection 
-                selectedPersona={selectedPersona} 
-                onSelectPersona={setSelectedPersona} 
-              />
-              <div className="h-20" /> {/* Added spacing */}
+          <div className="flex flex-col min-h-screen w-full">
+            <div className="flex-grow flex items-center justify-center">
+              <div className="w-full">
+                <PersonaSelection 
+                  selectedPersona={selectedPersona} 
+                  onSelectPersona={setSelectedPersona} 
+                />
+                <div className="h-20" /> {/* Added spacing */}
+              </div>
             </div>
             <Footer />
           </div>
