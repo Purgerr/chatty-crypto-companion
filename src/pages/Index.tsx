@@ -1,9 +1,5 @@
 import { useState } from "react";
-import { Navbar } from "@/components/Navbar";
-import { PersonaSelection } from "@/components/PersonaSelection";
 import { ChatInterface } from "@/components/ChatInterface";
-import { ComingSoonSection } from "@/components/ComingSoonSection";
-import { Footer } from "@/components/Footer";
 
 interface Message {
   id: number;
@@ -34,7 +30,7 @@ const personas = [
 ];
 
 const Index = () => {
-  const [selectedPersona, setSelectedPersona] = useState<number | null>(null);
+  const [selectedPersona, setSelectedPersona] = useState<number>(2); // Default to NFT Enthusiast
   const [messages, setMessages] = useState<Message[]>([]);
 
   const handleSendMessage = (content: string) => {
@@ -61,25 +57,15 @@ const Index = () => {
 
   return (
     <div className="flex min-h-screen flex-col bg-[#1A1F2C]">
-      <Navbar />
-      <main className="flex-1 container mx-auto py-8 px-4">
-        {!selectedPersona ? (
-          <PersonaSelection 
-            selectedPersona={selectedPersona} 
-            onSelectPersona={setSelectedPersona} 
-          />
-        ) : (
-          <ChatInterface 
-            selectedPersona={selectedPersona}
-            messages={messages}
-            onSendMessage={handleSendMessage}
-            onChangePersona={() => setSelectedPersona(null)}
-            personas={personas}
-          />
-        )}
-      </main>
-      <ComingSoonSection />
-      <Footer />
+      <div className="flex-1 container mx-auto py-8 px-4">
+        <ChatInterface 
+          selectedPersona={selectedPersona}
+          messages={messages}
+          onSendMessage={handleSendMessage}
+          onChangePersona={() => setSelectedPersona(selectedPersona === 1 ? 2 : (selectedPersona === 2 ? 3 : 1))}
+          personas={personas}
+        />
+      </div>
     </div>
   );
 };
