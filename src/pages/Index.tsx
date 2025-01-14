@@ -90,7 +90,7 @@ const Index = () => {
         {!selectedPersona ? (
           <div className="mx-auto max-w-4xl">
             <div className="mb-12 text-center">
-              <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-[#9b87f5] to-[#D946EF] bg-clip-text text-transparent">
+              <h1 className="text-5xl font-black tracking-wider mb-6 bg-gradient-to-r from-[#9b87f5] to-[#D946EF] bg-clip-text text-transparent uppercase [text-shadow:_2px_2px_10px_rgb(155_135_245_/_20%)] transform transition-all hover:scale-105">
                 Logik Core AI
               </h1>
               <h2 className="mb-4 text-4xl font-bold text-white">Choose Your AI Persona</h2>
