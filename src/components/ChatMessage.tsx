@@ -19,7 +19,6 @@ export const ChatMessage = ({ message, isAi, timestamp }: ChatMessageProps) => {
         isAi ? "text-[#2DD4BF]" : "text-[#9b87f5]"
       )}>
         <p className="leading-relaxed">{message}</p>
-        <span className="mt-2 block text-[10px] md:text-xs opacity-60">{timestamp}</span>
       </div>
     </div>
   );
