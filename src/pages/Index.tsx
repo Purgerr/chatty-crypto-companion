@@ -4,6 +4,7 @@ import { ChatMessage } from "@/components/ChatMessage";
 import { PersonaCard } from "@/components/PersonaCard";
 import { Brain, Coins, Code, Wallet, Home, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 interface Message {
   id: number;
@@ -18,18 +19,24 @@ const personas = [
     title: "Crypto Analyst",
     description: "Expert in cryptocurrency markets and trading strategies",
     icon: <Coins className="h-8 w-8" />,
+    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop",
+    fallback: "CA"
   },
   {
     id: 2,
     title: "NFT Enthusiast",
     description: "Specialized in NFT trends and marketplace insights",
     icon: <Brain className="h-8 w-8" />,
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=300&fit=crop",
+    fallback: "NE"
   },
   {
     id: 3,
     title: "Blockchain Developer",
     description: "Technical expert in Web3 development and smart contracts",
     icon: <Code className="h-8 w-8" />,
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=300&h=300&fit=crop",
+    fallback: "BD"
   },
 ];
 
@@ -83,14 +90,19 @@ const Index = () => {
             </div>
             <div className="grid gap-6 md:grid-cols-3">
               {personas.map((persona) => (
-                <PersonaCard
-                  key={persona.id}
-                  title={persona.title}
-                  description={persona.description}
-                  icon={persona.icon}
-                  isSelected={selectedPersona === persona.id}
-                  onClick={() => setSelectedPersona(persona.id)}
-                />
+                <div key={persona.id} className="flex flex-col items-center">
+                  <Avatar className="mb-6 h-24 w-24">
+                    <AvatarImage src={persona.image} alt={persona.title} />
+                    <AvatarFallback>{persona.fallback}</AvatarFallback>
+                  </Avatar>
+                  <PersonaCard
+                    title={persona.title}
+                    description={persona.description}
+                    icon={persona.icon}
+                    isSelected={selectedPersona === persona.id}
+                    onClick={() => setSelectedPersona(persona.id)}
+                  />
+                </div>
               ))}
             </div>
           </div>
@@ -98,7 +110,15 @@ const Index = () => {
           <div className="flex w-full flex-1 flex-col items-center">
             <div className="mb-8 flex w-full max-w-3xl items-center justify-between rounded-lg bg-accent/50 p-4">
               <div className="flex items-center gap-3">
-                {personas.find((p) => p.id === selectedPersona)?.icon}
+                <Avatar className="h-10 w-10">
+                  <AvatarImage 
+                    src={personas.find(p => p.id === selectedPersona)?.image} 
+                    alt={personas.find(p => p.id === selectedPersona)?.title} 
+                  />
+                  <AvatarFallback>
+                    {personas.find(p => p.id === selectedPersona)?.fallback}
+                  </AvatarFallback>
+                </Avatar>
                 <span className="font-medium">
                   {personas.find((p) => p.id === selectedPersona)?.title}
                 </span>
