@@ -20,7 +20,6 @@ export const ChatInterface = ({
   onChangePersona,
   personas,
 }: ChatInterfaceProps) => {
-  const [inputValue, setInputValue] = useState("");
   const selectedPersonaDetails = personas.find((p) => p.id === selectedPersona);
 
   return (
@@ -45,18 +44,18 @@ export const ChatInterface = ({
       <ScrollArea className="h-[500px] p-4">
         <div className="space-y-4">
           {messages.map((message) => (
-            <ChatMessage key={message.id} message={message} />
+            <ChatMessage 
+              key={message.id} 
+              message={message.content}
+              isAi={message.isAi}
+            />
           ))}
         </div>
       </ScrollArea>
 
       {/* Input Section */}
       <div className="p-4 border-t border-[#2A303C]">
-        <ChatInput
-          value={inputValue}
-          onChange={setInputValue}
-          onSend={onSendMessage}
-        />
+        <ChatInput onSendMessage={onSendMessage} />
       </div>
     </div>
   );
