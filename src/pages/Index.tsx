@@ -2,7 +2,8 @@ import { useState } from "react";
 import { ChatInput } from "@/components/ChatInput";
 import { ChatMessage } from "@/components/ChatMessage";
 import { PersonaCard } from "@/components/PersonaCard";
-import { Brain, Coins, Code } from "lucide-react";
+import { Brain, Coins, Code, Wallet, Home, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface Message {
   id: number;
@@ -60,14 +61,24 @@ const Index = () => {
 
   return (
     <div className="flex min-h-screen flex-col items-center bg-gradient-to-b from-background to-accent/20">
+      {/* Navigation Header */}
+      <header className="w-full px-6 py-4 flex justify-between items-center">
+        <Button variant="ghost" size="icon" className="hover:bg-accent">
+          <Home className="h-5 w-5" />
+        </Button>
+        <Button className="flex items-center gap-2">
+          <Wallet className="h-4 w-4" />
+          Connect Wallet
+        </Button>
+      </header>
+
       <main className="container flex flex-1 flex-col items-center py-8">
         {!selectedPersona ? (
           <div className="mx-auto max-w-4xl">
             <div className="mb-12 text-center">
               <h1 className="mb-4 text-4xl font-bold">Choose Your AI Persona</h1>
               <p className="text-lg text-muted-foreground">
-                Select a specialized AI assistant to help you navigate the Web3
-                space
+                Select a specialized AI assistant to help you navigate the Web3 space
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-3">
@@ -113,6 +124,25 @@ const Index = () => {
           </div>
         )}
       </main>
+
+      {/* Footer with Social Links */}
+      <footer className="w-full px-6 py-4 flex justify-center gap-4">
+        <Button variant="outline" size="icon" asChild>
+          <a href="https://t.me/your-telegram" target="_blank" rel="noopener noreferrer">
+            <ExternalLink className="h-4 w-4" />
+          </a>
+        </Button>
+        <Button variant="outline" size="icon" asChild>
+          <a href="https://twitter.com/your-twitter" target="_blank" rel="noopener noreferrer">
+            <ExternalLink className="h-4 w-4" />
+          </a>
+        </Button>
+        <Button variant="outline" size="icon" asChild>
+          <a href="https://dexscreener.com" target="_blank" rel="noopener noreferrer">
+            <ExternalLink className="h-4 w-4" />
+          </a>
+        </Button>
+      </footer>
     </div>
   );
 };
