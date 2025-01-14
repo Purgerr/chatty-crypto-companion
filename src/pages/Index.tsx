@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Header } from "@/components/Header";
+import { Navbar } from "@/components/Navbar";
 import { PersonaSelection } from "@/components/PersonaSelection";
 import { ChatInterface } from "@/components/ChatInterface";
 import { ComingSoonSection } from "@/components/ComingSoonSection";
@@ -61,7 +61,7 @@ const Index = () => {
 
   return (
     <div className="flex min-h-screen flex-col bg-gradient-to-b from-[#1A1F2C] to-[#0F1218] text-white">
-      <Header />
+      <Navbar />
       <main className="flex-1 container mx-auto py-8 px-4">
         {!selectedPersona ? (
           <PersonaSelection 
