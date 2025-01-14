@@ -69,39 +69,39 @@ const Index = () => {
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center bg-gradient-to-b from-background to-accent/20">
+    <div className="flex min-h-screen flex-col items-center bg-[#1A1F2C] text-white">
       {/* Navigation Header */}
-      <header className="w-full px-6 py-4 flex justify-between items-center">
+      <header className="w-full px-6 py-4 flex justify-between items-center bg-[#232836] border-b border-[#2A303C]">
         <Button 
           variant="ghost" 
-          size="icon" 
-          className="hover:bg-accent"
+          size="icon"
+          className="hover:bg-[#2A303C] text-white"
           onClick={() => navigate('/')}
         >
           <Home className="h-5 w-5" />
         </Button>
-        <Button className="flex items-center gap-2">
-          <Wallet className="h-4 w-4" />
+        <Button className="bg-[#9b87f5] hover:bg-[#8B5CF6] text-white">
+          <Wallet className="h-4 w-4 mr-2" />
           Connect Wallet
         </Button>
       </header>
 
-      <main className="container flex flex-1 flex-col items-center py-8">
+      <main className="container flex flex-1 flex-col items-center py-8 px-4">
         {!selectedPersona ? (
           <div className="mx-auto max-w-4xl">
             <div className="mb-12 text-center">
-              <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+              <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-[#9b87f5] to-[#D946EF] bg-clip-text text-transparent">
                 Logik Core AI
               </h1>
-              <h2 className="mb-4 text-4xl font-bold">Choose Your AI Persona</h2>
-              <p className="text-lg text-muted-foreground">
+              <h2 className="mb-4 text-4xl font-bold text-white">Choose Your AI Persona</h2>
+              <p className="text-lg text-gray-400">
                 Select a specialized AI assistant to help you navigate the Web3 space
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-3">
               {personas.map((persona) => (
                 <div key={persona.id} className="flex flex-col items-center">
-                  <Avatar className="mb-6 h-24 w-24">
+                  <Avatar className="mb-6 h-24 w-24 ring-2 ring-[#9b87f5] ring-offset-2 ring-offset-[#1A1F2C]">
                     <AvatarImage src={persona.image} alt={persona.title} />
                     <AvatarFallback>{persona.fallback}</AvatarFallback>
                   </Avatar>
@@ -118,9 +118,9 @@ const Index = () => {
           </div>
         ) : (
           <div className="flex w-full flex-1 flex-col items-center">
-            <div className="mb-8 flex w-full max-w-3xl items-center justify-between rounded-lg bg-accent/50 p-4">
+            <div className="mb-8 flex w-full max-w-3xl items-center justify-between rounded-lg bg-[#232836] p-4">
               <div className="flex items-center gap-3">
-                <Avatar className="h-10 w-10">
+                <Avatar className="h-10 w-10 ring-2 ring-[#9b87f5]">
                   <AvatarImage 
                     src={personas.find(p => p.id === selectedPersona)?.image} 
                     alt={personas.find(p => p.id === selectedPersona)?.title} 
@@ -129,18 +129,18 @@ const Index = () => {
                     {personas.find(p => p.id === selectedPersona)?.fallback}
                   </AvatarFallback>
                 </Avatar>
-                <span className="font-medium">
+                <span className="font-medium text-white">
                   {personas.find((p) => p.id === selectedPersona)?.title}
                 </span>
               </div>
               <button
                 onClick={() => setSelectedPersona(null)}
-                className="text-sm text-muted-foreground hover:text-foreground"
+                className="text-sm text-gray-400 hover:text-white transition-colors"
               >
                 Change Persona
               </button>
             </div>
-            <div className="flex flex-1 flex-col items-center space-y-4">
+            <div className="flex flex-1 flex-col items-center space-y-4 w-full max-w-3xl">
               {messages.map((message) => (
                 <ChatMessage
                   key={message.id}
@@ -150,50 +150,52 @@ const Index = () => {
                 />
               ))}
             </div>
-            <ChatInput onSendMessage={handleSendMessage} />
+            <div className="w-full max-w-3xl mt-4">
+              <ChatInput onSendMessage={handleSendMessage} />
+            </div>
           </div>
         )}
       </main>
 
       {/* Create an Agent Section */}
-      <div className="w-full px-6 py-8 bg-accent/30">
+      <div className="w-full px-6 py-8 bg-[#232836]">
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl font-bold mb-6">Create an Agent</h3>
+          <h3 className="text-2xl font-bold mb-6 text-white">Create an Agent</h3>
           <div className="grid grid-cols-3 gap-4">
-            <Button variant="outline" className="flex items-center gap-2" disabled>
+            <Button variant="outline" className="flex items-center gap-2 border-[#2A303C] text-gray-400" disabled>
               <MessageSquare className="h-4 w-4" />
               TikTok
-              <span className="text-xs text-muted-foreground">(Coming Soon)</span>
+              <span className="text-xs">(Coming Soon)</span>
             </Button>
-            <Button variant="outline" className="flex items-center gap-2" disabled>
+            <Button variant="outline" className="flex items-center gap-2 border-[#2A303C] text-gray-400" disabled>
               <MessageSquare className="h-4 w-4" />
               WhatsApp
-              <span className="text-xs text-muted-foreground">(Coming Soon)</span>
+              <span className="text-xs">(Coming Soon)</span>
             </Button>
-            <Button variant="outline" className="flex items-center gap-2" disabled>
+            <Button variant="outline" className="flex items-center gap-2 border-[#2A303C] text-gray-400" disabled>
               <MessageSquare className="h-4 w-4" />
               Twitter
-              <span className="text-xs text-muted-foreground">(Coming Soon)</span>
+              <span className="text-xs">(Coming Soon)</span>
             </Button>
           </div>
         </div>
       </div>
 
       {/* Footer with Social Links */}
-      <footer className="w-full px-6 py-4 flex justify-center gap-4">
-        <Button variant="outline" size="icon" asChild>
+      <footer className="w-full px-6 py-4 bg-[#1A1F2C] flex justify-center gap-4">
+        <Button variant="outline" size="icon" className="border-[#2A303C] hover:bg-[#232836]" asChild>
           <a href="https://t.me/your-telegram" target="_blank" rel="noopener noreferrer">
-            <ExternalLink className="h-4 w-4" />
+            <ExternalLink className="h-4 w-4 text-gray-400" />
           </a>
         </Button>
-        <Button variant="outline" size="icon" asChild>
+        <Button variant="outline" size="icon" className="border-[#2A303C] hover:bg-[#232836]" asChild>
           <a href="https://twitter.com/your-twitter" target="_blank" rel="noopener noreferrer">
-            <ExternalLink className="h-4 w-4" />
+            <ExternalLink className="h-4 w-4 text-gray-400" />
           </a>
         </Button>
-        <Button variant="outline" size="icon" asChild>
+        <Button variant="outline" size="icon" className="border-[#2A303C] hover:bg-[#232836]" asChild>
           <a href="https://dexscreener.com" target="_blank" rel="noopener noreferrer">
-            <ExternalLink className="h-4 w-4" />
+            <ExternalLink className="h-4 w-4 text-gray-400" />
           </a>
         </Button>
       </footer>
