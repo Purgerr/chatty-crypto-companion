@@ -1,4 +1,4 @@
-import { Home, Twitter, Discord, Github } from "lucide-react";
+import { Home, Twitter, MessageCircle, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
@@ -34,7 +34,7 @@ export const Navbar = () => {
             className="hover:bg-[#2A303C] text-[#9b87f5]"
             onClick={() => window.open('https://discord.com', '_blank')}
           >
-            <Discord className="h-5 w-5" />
+            <MessageCircle className="h-5 w-5" />
           </Button>
           <Button 
             variant="ghost" 
