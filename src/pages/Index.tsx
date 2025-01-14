@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ChatInput } from "@/components/ChatInput";
 import { ChatMessage } from "@/components/ChatMessage";
 import { PersonaCard } from "@/components/PersonaCard";
-import { Brain, Coins, Code, Wallet, Home, ExternalLink, MessageSquare } from "lucide-react";
+import { Brain, Coins, Code, Wallet, Home, Twitter, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useNavigate } from "react-router-dom";
@@ -187,17 +187,23 @@ const Index = () => {
       <footer className="w-full px-6 py-4 bg-black flex justify-center gap-4">
         <Button variant="outline" size="icon" className="border-[#2A303C] hover:bg-[#232836] text-[#9b87f5]" asChild>
           <a href="https://t.me/your-telegram" target="_blank" rel="noopener noreferrer">
-            <ExternalLink className="h-4 w-4" />
+            <MessageSquare className="h-4 w-4" />
           </a>
         </Button>
         <Button variant="outline" size="icon" className="border-[#2A303C] hover:bg-[#232836] text-[#9b87f5]" asChild>
           <a href="https://twitter.com/your-twitter" target="_blank" rel="noopener noreferrer">
-            <ExternalLink className="h-4 w-4" />
+            <Twitter className="h-4 w-4" />
           </a>
         </Button>
         <Button variant="outline" size="icon" className="border-[#2A303C] hover:bg-[#232836] text-[#9b87f5]" asChild>
           <a href="https://dexscreener.com" target="_blank" rel="noopener noreferrer">
-            <ExternalLink className="h-4 w-4" />
+            <svg 
+              viewBox="0 0 24 24" 
+              className="h-4 w-4"
+              fill="currentColor"
+            >
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
           </a>
         </Button>
       </footer>
