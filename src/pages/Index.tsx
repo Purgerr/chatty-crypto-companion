@@ -157,10 +157,12 @@ const Index = () => {
         )}
       </main>
 
-      {/* Create an Agent Section */}
+      {/* Create an AI Agent Section */}
       <div className="w-full px-6 py-8 bg-black/80 border-t border-[#2A303C]">
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-[#9b87f5] to-[#D946EF] bg-clip-text text-transparent">Create an Agent</h3>
+          <h3 className="text-2xl font-black tracking-wider mb-6 bg-gradient-to-r from-[#9b87f5] to-[#D946EF] bg-clip-text text-transparent uppercase [text-shadow:_2px_2px_10px_rgb(155_135_245_/_20%)]">
+            Create an AI Agent
+          </h3>
           <div className="grid grid-cols-3 gap-4">
             <Button variant="outline" className="flex items-center gap-2 border-[#2A303C] text-[#9b87f5] hover:text-[#D946EF]" disabled>
               <MessageSquare className="h-4 w-4" />
