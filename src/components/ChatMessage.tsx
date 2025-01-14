@@ -15,10 +15,10 @@ export const ChatMessage = ({ message, isAi }: ChatMessageProps) => {
     >
       <div
         className={cn(
-          "relative font-mono text-sm md:text-base leading-relaxed",
-          isAi
-            ? "text-white/90"
-            : "text-[#9b87f5]"
+          "relative font-mono text-sm md:text-base leading-relaxed p-4 rounded-lg",
+          isAi 
+            ? "bg-[#1e1e1e]/50 text-white/90 border border-white/10"
+            : "bg-[#9b87f5]/10 text-[#9b87f5] border border-[#9b87f5]/20"
         )}
       >
         <p>{message}</p>
