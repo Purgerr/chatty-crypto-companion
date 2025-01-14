@@ -20,7 +20,7 @@ const personas = [
     title: "Crypto Analyst",
     description: "Expert in cryptocurrency markets and trading strategies",
     icon: <Coins className="h-8 w-8" />,
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop",
+    image: "https://i.pravatar.cc/300?img=12", // Professional looking avatar
     fallback: "CA"
   },
   {
@@ -28,7 +28,7 @@ const personas = [
     title: "NFT Enthusiast",
     description: "Specialized in NFT trends and marketplace insights",
     icon: <Brain className="h-8 w-8" />,
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=300&fit=crop",
+    image: "https://i.pravatar.cc/300?img=32", // Creative looking avatar
     fallback: "NE"
   },
   {
@@ -36,7 +36,7 @@ const personas = [
     title: "Blockchain Developer",
     description: "Technical expert in Web3 development and smart contracts",
     icon: <Code className="h-8 w-8" />,
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=300&h=300&fit=crop",
+    image: "https://i.pravatar.cc/300?img=67", // Tech-savvy looking avatar
     fallback: "BD"
   },
 ];
