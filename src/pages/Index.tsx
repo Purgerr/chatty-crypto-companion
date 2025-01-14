@@ -94,13 +94,16 @@ const Index = () => {
       <Navbar />
       <main className="flex-1 container mx-auto py-8 px-4">
         {!selectedPersona ? (
-          <>
-            <PersonaSelection 
-              selectedPersona={selectedPersona} 
-              onSelectPersona={setSelectedPersona} 
-            />
+          <div className="flex flex-col min-h-screen">
+            <div className="flex-grow">
+              <PersonaSelection 
+                selectedPersona={selectedPersona} 
+                onSelectPersona={setSelectedPersona} 
+              />
+              <div className="h-20" /> {/* Added spacing */}
+            </div>
             <Footer />
-          </>
+          </div>
         ) : (
           <ChatInterface 
             selectedPersona={selectedPersona}
