@@ -50,37 +50,39 @@ export const ChatMessage = ({ message, isAi }: ChatMessageProps) => {
       )}>
         <p className="leading-relaxed">{message}</p>
         
-        <div className="mt-2 flex items-center gap-2 text-gray-400">
-          <button 
-            onClick={handleAudio}
-            className="hover:text-[#2DD4BF] transition-colors"
-          >
-            <AudioLines size={16} />
-          </button>
-          
-          <button 
-            onClick={handleCopy}
-            className="hover:text-[#2DD4BF] transition-colors"
-          >
-            <Copy size={16} />
-          </button>
-          
-          <button 
-            onClick={handleLike}
-            className="hover:text-[#2DD4BF] transition-colors flex items-center gap-1"
-          >
-            <ThumbsUp size={16} />
-            {likes > 0 && <span className="text-xs">{likes}</span>}
-          </button>
-          
-          <button 
-            onClick={handleDislike}
-            className="hover:text-[#2DD4BF] transition-colors flex items-center gap-1"
-          >
-            <ThumbsDown size={16} />
-            {dislikes > 0 && <span className="text-xs">{dislikes}</span>}
-          </button>
-        </div>
+        {isAi && (
+          <div className="mt-2 flex items-center gap-2 text-gray-400">
+            <button 
+              onClick={handleAudio}
+              className="hover:text-[#2DD4BF] transition-colors"
+            >
+              <AudioLines size={16} />
+            </button>
+            
+            <button 
+              onClick={handleCopy}
+              className="hover:text-[#2DD4BF] transition-colors"
+            >
+              <Copy size={16} />
+            </button>
+            
+            <button 
+              onClick={handleLike}
+              className="hover:text-[#2DD4BF] transition-colors flex items-center gap-1"
+            >
+              <ThumbsUp size={16} />
+              {likes > 0 && <span className="text-xs">{likes}</span>}
+            </button>
+            
+            <button 
+              onClick={handleDislike}
+              className="hover:text-[#2DD4BF] transition-colors flex items-center gap-1"
+            >
+              <ThumbsDown size={16} />
+              {dislikes > 0 && <span className="text-xs">{dislikes}</span>}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
