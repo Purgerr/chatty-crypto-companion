@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { ThumbsUp, ThumbsDown, Copy, AudioLines, Image } from "lucide-react";
+import { ThumbsUp, ThumbsDown, Copy, AudioLines } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -35,11 +35,6 @@ export const ChatMessage = ({ message, isAi }: ChatMessageProps) => {
   const handleAudio = () => {
     // Text-to-speech functionality would go here
     toast.info("Audio feature coming soon!");
-  };
-
-  const handleImage = () => {
-    // Image generation functionality would go here
-    toast.info("Image generation coming soon!");
   };
 
   return (
@@ -84,13 +79,6 @@ export const ChatMessage = ({ message, isAi }: ChatMessageProps) => {
           >
             <ThumbsDown size={16} />
             {dislikes > 0 && <span className="text-xs">{dislikes}</span>}
-          </button>
-          
-          <button 
-            onClick={handleImage}
-            className="hover:text-[#2DD4BF] transition-colors"
-          >
-            <Image size={16} />
           </button>
         </div>
       </div>
