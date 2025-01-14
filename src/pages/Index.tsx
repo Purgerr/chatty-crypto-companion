@@ -20,7 +20,7 @@ const personas = [
     title: "Crypto Analyst",
     description: "Expert in cryptocurrency markets and trading strategies",
     icon: <Coins className="h-8 w-8" />,
-    image: "https://i.pravatar.cc/300?img=12", // Professional looking avatar
+    image: "https://api.dicebear.com/7.x/adventurer-neutral/svg?seed=analyst", // Anime-style analyst
     fallback: "CA"
   },
   {
@@ -28,7 +28,7 @@ const personas = [
     title: "NFT Enthusiast",
     description: "Specialized in NFT trends and marketplace insights",
     icon: <Brain className="h-8 w-8" />,
-    image: "https://i.pravatar.cc/300?img=32", // Creative looking avatar
+    image: "https://api.dicebear.com/7.x/adventurer-neutral/svg?seed=creative", // Anime-style creative
     fallback: "NE"
   },
   {
@@ -36,7 +36,7 @@ const personas = [
     title: "Blockchain Developer",
     description: "Technical expert in Web3 development and smart contracts",
     icon: <Code className="h-8 w-8" />,
-    image: "https://i.pravatar.cc/300?img=67", // Tech-savvy looking avatar
+    image: "https://api.dicebear.com/7.x/adventurer-neutral/svg?seed=developer", // Anime-style developer
     fallback: "BD"
   },
 ];
