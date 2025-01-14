@@ -30,7 +30,7 @@ export const ChatInterface = ({
   const currentPersona = personas.find(p => p.id === selectedPersona);
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen items-center">
       <div className="mb-4 flex w-full max-w-3xl items-center justify-between rounded-lg bg-[#1E1B2E] p-3 md:p-4 border border-[#2A303C]">
         <div className="flex items-center gap-2 md:gap-3">
           <span className="font-medium text-sm md:text-base text-[#9b87f5]">

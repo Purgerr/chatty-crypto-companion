@@ -30,7 +30,7 @@ const personas = [
 ];
 
 const Index = () => {
-  const [selectedPersona, setSelectedPersona] = useState<number>(2); // Default to NFT Enthusiast
+  const [selectedPersona, setSelectedPersona] = useState<number>(2);
   const [messages, setMessages] = useState<Message[]>([]);
 
   const handleSendMessage = (content: string) => {
@@ -43,7 +43,6 @@ const Index = () => {
 
     setMessages((prev) => [...prev, newMessage]);
 
-    // Simulate AI response
     setTimeout(() => {
       const aiResponse: Message = {
         id: Date.now() + 1,
