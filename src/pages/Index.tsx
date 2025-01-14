@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ChatInput } from "@/components/ChatInput";
 import { ChatMessage } from "@/components/ChatMessage";
 import { PersonaCard } from "@/components/PersonaCard";
-import { Brain, Coins, Code, Wallet, Home, ExternalLink } from "lucide-react";
+import { Brain, Coins, Code, Wallet, Home, ExternalLink, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
@@ -83,7 +83,10 @@ const Index = () => {
         {!selectedPersona ? (
           <div className="mx-auto max-w-4xl">
             <div className="mb-12 text-center">
-              <h1 className="mb-4 text-4xl font-bold">Choose Your AI Persona</h1>
+              <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+                Logik Core AI
+              </h1>
+              <h2 className="mb-4 text-4xl font-bold">Choose Your AI Persona</h2>
               <p className="text-lg text-muted-foreground">
                 Select a specialized AI assistant to help you navigate the Web3 space
               </p>
@@ -144,6 +147,30 @@ const Index = () => {
           </div>
         )}
       </main>
+
+      {/* Create an Agent Section */}
+      <div className="w-full px-6 py-8 bg-accent/30">
+        <div className="max-w-4xl mx-auto text-center">
+          <h3 className="text-2xl font-bold mb-6">Create an Agent</h3>
+          <div className="grid grid-cols-3 gap-4">
+            <Button variant="outline" className="flex items-center gap-2" disabled>
+              <MessageSquare className="h-4 w-4" />
+              TikTok
+              <span className="text-xs text-muted-foreground">(Coming Soon)</span>
+            </Button>
+            <Button variant="outline" className="flex items-center gap-2" disabled>
+              <MessageSquare className="h-4 w-4" />
+              WhatsApp
+              <span className="text-xs text-muted-foreground">(Coming Soon)</span>
+            </Button>
+            <Button variant="outline" className="flex items-center gap-2" disabled>
+              <MessageSquare className="h-4 w-4" />
+              Twitter
+              <span className="text-xs text-muted-foreground">(Coming Soon)</span>
+            </Button>
+          </div>
+        </div>
+      </div>
 
       {/* Footer with Social Links */}
       <footer className="w-full px-6 py-4 flex justify-center gap-4">
