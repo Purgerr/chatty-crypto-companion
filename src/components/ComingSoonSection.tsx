@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export const ComingSoonSection = () => {
   return (
-    <div className="w-full px-4 md:px-6 py-6 md:py-8 bg-black/80 border-t border-[#2A303C]">
+    <div className="w-full px-4 md:px-6 py-6 md:py-8 bg-[#1A1F2C] border-t border-[#2A303C]">
       <div className="max-w-4xl mx-auto text-center">
         <h3 className="text-xl md:text-2xl font-black tracking-wider mb-4 md:mb-6 bg-gradient-to-r from-[#9b87f5] to-[#D946EF] bg-clip-text text-transparent uppercase [text-shadow:_2px_2px_10px_rgb(155_135_245_/_20%)]">
           Create an AI Agent
