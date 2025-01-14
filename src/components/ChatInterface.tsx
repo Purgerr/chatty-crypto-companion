@@ -50,6 +50,7 @@ export const ChatInterface = ({
             key={message.id}
             message={message.content}
             isAi={message.isAi}
+            personaId={selectedPersona}
           />
         ))}
       </div>
