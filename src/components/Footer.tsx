@@ -1,4 +1,4 @@
-import { MessageSquare, Twitter } from "lucide-react";
+import { Send, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
@@ -10,7 +10,7 @@ export const Footer = () => {
       <div className="flex justify-center gap-4">
         <Button variant="outline" size="icon" className="border-[#2A303C] hover:bg-[#232836] text-[#9b87f5]" asChild>
           <a href="https://t.me/your-telegram" target="_blank" rel="noopener noreferrer">
-            <MessageSquare className="h-4 w-4" />
+            <Send className="h-4 w-4" />
           </a>
         </Button>
         <Button variant="outline" size="icon" className="border-[#2A303C] hover:bg-[#232836] text-[#9b87f5]" asChild>
