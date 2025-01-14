@@ -31,7 +31,7 @@ export const ChatInterface = ({
 
   return (
     <div className="flex w-full flex-1 flex-col items-center">
-      <div className="mb-4 md:mb-8 flex w-full max-w-3xl items-center justify-between p-3 md:p-4">
+      <div className="mb-4 md:mb-8 flex w-full max-w-3xl items-center justify-between p-3 md:p-4 bg-[#1e1e1e]/50 border border-white/10 rounded-lg">
         <div className="flex items-center gap-2 md:gap-3">
           <span className="font-mono text-sm md:text-base text-[#9b87f5]">
             {currentPersona?.title}
