@@ -14,15 +14,11 @@ export const ChatMessage = ({ message, isAi, timestamp }: ChatMessageProps) => {
         isAi ? "self-start" : "self-end"
       )}
     >
-      <div
-        className={cn(
-          "relative rounded-xl p-4 md:p-6",
-          isAi
-            ? "bg-[#1E1B2E] text-white/90 border border-[#2A303C]"
-            : "bg-[#9b87f5] text-white"
-        )}
-      >
-        <p className="text-sm md:text-base leading-relaxed">{message}</p>
+      <div className={cn(
+        "font-mono text-sm md:text-base",
+        isAi ? "text-[#2DD4BF]" : "text-[#9b87f5]"
+      )}>
+        <p className="leading-relaxed">{message}</p>
         <span className="mt-2 block text-[10px] md:text-xs opacity-60">{timestamp}</span>
       </div>
     </div>
