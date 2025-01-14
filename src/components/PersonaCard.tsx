@@ -19,16 +19,18 @@ export const PersonaCard = ({
   return (
     <div
       className={cn(
-        "group relative overflow-hidden rounded-xl border transition-all duration-300 font-mono",
+        "group relative overflow-hidden rounded-xl border transition-all duration-300 font-mono flex flex-col h-full",
         isSelected 
           ? "border-[#9b87f5] bg-[#1E1B2E] shadow-lg shadow-[#9b87f5]/20" 
           : "border-[#2A303C] bg-[#1E1B2E] hover:border-[#9b87f5]/50"
       )}
     >
-      <div className="p-6 space-y-4">
+      <div className="p-6 space-y-4 flex-grow">
         <div className="text-2xl text-[#9b87f5]">{icon}</div>
         <h3 className="text-lg font-bold text-white/90">{title}</h3>
         <p className="text-sm text-white/60 leading-relaxed">{description}</p>
+      </div>
+      <div className="p-6 pt-0">
         <Button
           onClick={onClick}
           variant={isSelected ? "default" : "outline"}
