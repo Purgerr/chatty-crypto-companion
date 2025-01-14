@@ -32,7 +32,7 @@ export const Navbar = () => {
             variant="ghost" 
             size="icon"
             className="hover:bg-[#2A303C] text-[#9b87f5]"
-            onClick={() => window.open('https://discord.com', '_blank')}
+            onClick={() => window.open('https://t.me', '_blank')}
           >
             <MessageCircle className="h-5 w-5" />
           </Button>
@@ -40,7 +40,7 @@ export const Navbar = () => {
             variant="ghost" 
             size="icon"
             className="hover:bg-[#2A303C] text-[#9b87f5]"
-            onClick={() => window.open('https://github.com', '_blank')}
+            onClick={() => window.open('https://dexscreener.com', '_blank')}
           >
             <Github className="h-5 w-5" />
           </Button>
