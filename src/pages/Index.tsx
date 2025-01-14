@@ -60,7 +60,7 @@ const Index = () => {
   };
 
   return (
-    <div className="flex min-h-screen flex-col bg-gradient-to-b from-[#1A1F2C] to-[#0F1218] text-white">
+    <div className="flex min-h-screen flex-col bg-[#1A1F2C]">
       <Navbar />
       <main className="flex-1 container mx-auto py-8 px-4">
         {!selectedPersona ? (
