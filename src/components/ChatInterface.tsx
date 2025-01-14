@@ -1,59 +1,63 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { ChatInput } from "@/components/ChatInput";
 import { ChatMessage } from "@/components/ChatMessage";
-
-interface Message {
-  id: number;
-  content: string;
-  isAi: boolean;
-  timestamp: string;
-}
+import type { Message, Persona } from "@/types/chat";
 
 interface ChatInterfaceProps {
   selectedPersona: number;
   messages: Message[];
   onSendMessage: (content: string) => void;
   onChangePersona: () => void;
-  personas: Array<{
-    id: number;
-    title: string;
-    fallback: string;
-  }>;
+  personas: Persona[];
 }
 
-export const ChatInterface = ({ 
-  selectedPersona, 
-  messages, 
-  onSendMessage, 
+export const ChatInterface = ({
+  selectedPersona,
+  messages,
+  onSendMessage,
   onChangePersona,
-  personas 
+  personas,
 }: ChatInterfaceProps) => {
-  const currentPersona = personas.find(p => p.id === selectedPersona);
+  const [inputValue, setInputValue] = useState("");
+  const selectedPersonaDetails = personas.find((p) => p.id === selectedPersona);
 
   return (
-    <div className="flex w-full flex-1 flex-col items-center">
-      <div className="mb-4 md:mb-8 flex w-full max-w-3xl items-center justify-between p-3 md:p-4 bg-[#1e1e1e]/50 border border-white/10 rounded-lg">
-        <div className="flex items-center gap-2 md:gap-3">
-          <span className="font-mono text-sm md:text-base text-[#9b87f5]">
-            {currentPersona?.title}
+    <div className="w-full max-w-4xl mx-auto bg-[#1E1B2E] rounded-xl border border-[#2A303C] overflow-hidden">
+      {/* Header Section */}
+      <div className="p-4 border-b border-[#2A303C] flex items-center justify-between">
+        <div className="flex items-center space-x-2">
+          <span className="text-[#9b87f5] font-bold">
+            {selectedPersonaDetails?.title || "AI Assistant"}
           </span>
         </div>
-        <button
+        <Button
+          variant="outline"
           onClick={onChangePersona}
-          className="font-mono text-xs md:text-sm text-[#9b87f5] hover:text-[#D946EF] transition-colors"
+          className="border-[#9b87f5] text-[#9b87f5] hover:bg-[#9b87f5] hover:text-white"
         >
           Change Persona
-        </button>
+        </Button>
       </div>
-      <div className="flex flex-1 flex-col items-center space-y-3 md:space-y-4 w-full max-w-3xl px-2 md:px-0 mb-24">
-        {messages.map((message) => (
-          <ChatMessage
-            key={message.id}
-            message={message.content}
-            isAi={message.isAi}
-          />
-        ))}
+
+      {/* Chat Messages Section */}
+      <ScrollArea className="h-[500px] p-4">
+        <div className="space-y-4">
+          {messages.map((message) => (
+            <ChatMessage key={message.id} message={message} />
+          ))}
+        </div>
+      </ScrollArea>
+
+      {/* Input Section */}
+      <div className="p-4 border-t border-[#2A303C]">
+        <ChatInput
+          value={inputValue}
+          onChange={setInputValue}
+          onSend={onSendMessage}
+        />
       </div>
-      <ChatInput onSendMessage={onSendMessage} />
     </div>
   );
 };
