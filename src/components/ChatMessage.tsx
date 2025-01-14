@@ -2,6 +2,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Copy, AudioLines, ThumbsUp, ThumbsDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 
 interface ChatMessageProps {
   message: string;
@@ -11,9 +12,14 @@ interface ChatMessageProps {
 export const ChatMessage = ({ message, isAi }: ChatMessageProps) => {
   const [liked, setLiked] = useState(false);
   const [disliked, setDisliked] = useState(false);
+  const { toast } = useToast();
 
   const handleCopy = () => {
     navigator.clipboard.writeText(message);
+    toast({
+      description: "Message copied to clipboard",
+      duration: 2000,
+    });
     console.log('Message copied:', message);
   };
 
