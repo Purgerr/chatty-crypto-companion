@@ -3,9 +3,12 @@ import { cn } from "@/lib/utils";
 interface ChatMessageProps {
   message: string;
   isAi: boolean;
+  personaId?: number;
 }
 
-export const ChatMessage = ({ message, isAi }: ChatMessageProps) => {
+export const ChatMessage = ({ message, isAi, personaId }: ChatMessageProps) => {
+  const isCryptoAnalyst = personaId === 1;
+
   return (
     <div
       className={cn(
@@ -15,10 +18,9 @@ export const ChatMessage = ({ message, isAi }: ChatMessageProps) => {
     >
       <div
         className={cn(
-          "relative font-mono text-sm md:text-base leading-relaxed p-4 rounded-lg",
-          isAi 
-            ? "bg-[#1e1e1e]/50 text-white/90 border border-white/10"
-            : "bg-[#9b87f5]/10 text-[#9b87f5] border border-[#9b87f5]/20"
+          "relative font-mono text-sm md:text-base leading-relaxed",
+          isAi && isCryptoAnalyst && "bg-[#1E1B2E] p-4 md:p-6 rounded-xl border border-[#2A303C]",
+          isAi ? "text-white/90" : "text-[#9b87f5]"
         )}
       >
         <p>{message}</p>
