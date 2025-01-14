@@ -64,10 +64,14 @@ const Index = () => {
       <Navbar />
       <main className="flex-1 container mx-auto py-8 px-4">
         {!selectedPersona ? (
-          <PersonaSelection 
-            selectedPersona={selectedPersona} 
-            onSelectPersona={setSelectedPersona} 
-          />
+          <>
+            <PersonaSelection 
+              selectedPersona={selectedPersona} 
+              onSelectPersona={setSelectedPersona} 
+            />
+            <ComingSoonSection />
+            <Footer />
+          </>
         ) : (
           <ChatInterface 
             selectedPersona={selectedPersona}
@@ -78,8 +82,6 @@ const Index = () => {
           />
         )}
       </main>
-      <ComingSoonSection />
-      <Footer />
     </div>
   );
 };
