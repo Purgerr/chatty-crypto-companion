@@ -19,7 +19,7 @@ export const PersonaCard = ({
   return (
     <div
       className={cn(
-        "group relative overflow-hidden rounded-xl border transition-all duration-300",
+        "group relative overflow-hidden rounded-xl border transition-all duration-300 font-mono",
         isSelected 
           ? "border-[#9b87f5] bg-[#1E1B2E] shadow-lg shadow-[#9b87f5]/20" 
           : "border-[#2A303C] bg-[#1E1B2E] hover:border-[#9b87f5]/50"
