@@ -63,9 +63,9 @@ const Index = () => {
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center bg-black text-white">
+    <div className="flex min-h-screen flex-col bg-gradient-to-b from-[#1A1F2C] to-[#0F1218] text-white">
       <Header />
-      <main className="container flex flex-1 flex-col items-center py-8 px-4">
+      <main className="flex-1 container mx-auto py-8 px-4">
         {!selectedPersona ? (
           <PersonaSelection 
             selectedPersona={selectedPersona} 

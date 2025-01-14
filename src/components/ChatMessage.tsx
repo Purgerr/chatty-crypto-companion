@@ -16,14 +16,14 @@ export const ChatMessage = ({ message, isAi, timestamp }: ChatMessageProps) => {
     >
       <div
         className={cn(
-          "relative rounded-2xl p-3 md:p-6 text-sm md:text-base",
+          "relative rounded-xl p-4 md:p-6",
           isAi
-            ? "bg-accent text-accent-foreground"
-            : "bg-primary text-primary-foreground"
+            ? "bg-[#1E1B2E] text-white/90 border border-[#2A303C]"
+            : "bg-[#9b87f5] text-white"
         )}
       >
-        <p className="text-sm md:text-base">{message}</p>
-        <span className="mt-1 md:mt-2 block text-[10px] md:text-xs opacity-70">{timestamp}</span>
+        <p className="text-sm md:text-base leading-relaxed">{message}</p>
+        <span className="mt-2 block text-[10px] md:text-xs opacity-60">{timestamp}</span>
       </div>
     </div>
   );
