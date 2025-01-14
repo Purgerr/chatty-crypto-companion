@@ -30,7 +30,7 @@ const personas = [
 ];
 
 const Index = () => {
-  const [selectedPersona, setSelectedPersona] = useState<number>(2); // Default to NFT Enthusiast
+  const [selectedPersona, setSelectedPersona] = useState<number>(2);
   const [messages, setMessages] = useState<Message[]>([]);
 
   const handleSendMessage = (content: string) => {
@@ -43,7 +43,6 @@ const Index = () => {
 
     setMessages((prev) => [...prev, newMessage]);
 
-    // Simulate AI response
     setTimeout(() => {
       const aiResponse: Message = {
         id: Date.now() + 1,
@@ -56,8 +55,8 @@ const Index = () => {
   };
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#1A1F2C]">
-      <div className="flex-1 container mx-auto py-8 px-4">
+    <div className="h-screen bg-[#1A1F2C]">
+      <div className="h-full">
         <ChatInterface 
           selectedPersona={selectedPersona}
           messages={messages}

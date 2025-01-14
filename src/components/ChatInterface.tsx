@@ -30,8 +30,8 @@ export const ChatInterface = ({
   const currentPersona = personas.find(p => p.id === selectedPersona);
 
   return (
-    <div className="flex w-full flex-1 flex-col items-center">
-      <div className="mb-4 md:mb-8 flex w-full max-w-3xl items-center justify-between rounded-lg bg-[#1E1B2E] p-3 md:p-4 border border-[#2A303C]">
+    <div className="flex h-screen flex-col">
+      <div className="mb-4 flex w-full items-center justify-between rounded-lg bg-[#1E1B2E] p-3 md:p-4 border border-[#2A303C]">
         <div className="flex items-center gap-2 md:gap-3">
           <span className="font-medium text-sm md:text-base text-[#9b87f5]">
             {currentPersona?.title}
@@ -44,17 +44,21 @@ export const ChatInterface = ({
           Change Persona
         </button>
       </div>
-      <div className="flex flex-1 flex-col items-center space-y-3 md:space-y-4 w-full max-w-3xl px-2 md:px-0">
-        {messages.map((message) => (
-          <ChatMessage
-            key={message.id}
-            message={message.content}
-            isAi={message.isAi}
-            timestamp={message.timestamp}
-          />
-        ))}
+      
+      <div className="flex-1 overflow-y-auto px-4">
+        <div className="flex flex-col space-y-3 md:space-y-4">
+          {messages.map((message) => (
+            <ChatMessage
+              key={message.id}
+              message={message.content}
+              isAi={message.isAi}
+              timestamp={message.timestamp}
+            />
+          ))}
+        </div>
       </div>
-      <div className="w-full max-w-3xl mt-4">
+
+      <div className="mt-auto border-t border-[#2A303C] bg-[#1A1F2C] p-4">
         <ChatInput onSendMessage={onSendMessage} />
       </div>
     </div>
